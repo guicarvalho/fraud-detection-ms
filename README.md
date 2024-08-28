@@ -20,6 +20,7 @@ O objetivo deste projeto é fornecer uma abordagem prática para a detecção de
 - **scikit-learn:** Biblioteca para construção e avaliação do modelo de machine learning.
 - **FastAPI:** Framework para criação de APIs web rápidas e eficientes.
 - **Uvicorn:** Servidor ASGI para execução da aplicação FastAPI.
+- **Docker:** Plataforma para construir, empacotar e distribuir a aplicação em contêineres.
 
 ## 📦 Instalação e execução
 
@@ -28,28 +29,43 @@ O objetivo deste projeto é fornecer uma abordagem prática para a detecção de
     git clone https://github.com/guicarvalho/fraud_detection_ms.git
     cd fraud_detection_ms
     ```
-2. Instalar o Poetry
+2. Escolher a forma de execução
+    Você pode optar por executar a aplicação usando Docker ou localmente com Poetry. Ambas as opções estão descritas abaixo:
+3. Executando com Docker
+    Se você prefere utilizar Docker para executar a aplicação, siga os passos abaixo:
+    3.1. Construir a imagem Docker
+    ```bash
+    docker build -t fraud-detection-ms .
+    ```
+    3.2. Rodar o contêiner Docker
+    ```bash
+    docker run -d -p 8000:8000 fraud-detection-ms
+    ```
+    A aplicação estará acessível em <http://localhost:8000/docs>.
+
+4. Rodando localmente com Poetry
+    Caso prefira rodar a aplicação localmente sem Docker, siga os passos abaixo:
+    4.1. Instalar o Poetry
     Se ainda não tiver o Poetry instalado, você pode instalá-lo seguindo as instruções oficiais:
     ```bash
     curl -sSL https://install.python-poetry.org | python3 -
     ```
-3. Instalar as dependências
+    4.2. Instalar as dependências
     No diretório do projeto, execute o comando abaixo para instalar todas as dependências:
     ```bash
     poetry install
     ```
-4. Ativar o ambiente virtual
+    4.3. Ativar o ambiente virtual
     Ative o ambiente virtual criado pelo Poetry:
     ```bash
     poetry shell
     ```
-5. Executar a API FastAPI
+    4.4. Executar a API FastAPI
     Com o ambiente ativado, execute a aplicação:
     ```bash
     uvicorn src.main:app --reload
     ```
-6. Acessar a documentação da API
-    Abra o seu navegador e acesse `http://localhost:8000/docs` para visualizar a documentação interativa gerada pelo Swagger UI.
+    A aplicação estará acessível em <http://localhost:8000/docs>.
 
 ## 🧪 Testando a API
 
