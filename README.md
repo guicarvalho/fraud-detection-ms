@@ -78,7 +78,7 @@ curl -X POST "http://localhost:8000/check-fraud" -H "Content-Type: application/j
 ```json
 {
   "result": "legítima",
-  "accuracy": 0.85
+  "proba": 0.85
 }
 ```
 
